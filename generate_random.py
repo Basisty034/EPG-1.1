@@ -1,8 +1,12 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, send_from_directory, request, jsonify
 import random
 import string
+import os
 
 app = Flask(__name__)
+
+# Path to the directory containing the HTML and static files
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 def generate_random_email(domain="gmail.com"):
     random_letters = ''.join(random.choice(string.ascii_lowercase) for _ in range(5))
@@ -20,7 +24,7 @@ def generate_random_password(length=12):
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return send_from_directory(BASE_DIR, 'index.html')
 
 @app.route('/generate', methods=['POST'])
 def generate():
