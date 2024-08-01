@@ -1,0 +1,114 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.chat-container {
+    width: 50%;
+    max-width: 600px;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.chat-box-container {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-box {
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+    max-width: 70%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    word-wrap: break-word;
+}
+
+.user-box {
+    align-self: flex-end;
+    background-color: #dcf8c6;
+}
+
+.generator-box {
+    align-self: flex-start;
+    background-color: #ffffff;
+}
+
+.input-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #ffffff;
+    border-top: 1px solid #ccc;
+}
+
+input[type="text"] {
+    width: 80%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    flex-grow: 1;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 0 5px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink-caret {
+    from,
+    to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: black;
+    }
+}
+
+.typing-animation {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 0.15em solid black;
+    animation: typing 2s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+.typing-container {
+    display: inline-block;
+    border-right: 0.15em solid black;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 2s steps(40, end), blink-caret 0.75s step-end infinite;
+}
